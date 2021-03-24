@@ -44,14 +44,15 @@ impl Solution {
     // }
 
     pub fn max_profit(prices: Vec<i32>, fee: i32) -> i32 {
-        let T_ik0:i64 = 0, T_ik1:i64 = Integer.MIN_VALUE;
-    
-        for (int price : prices) {
-            long T_ik0_old = T_ik0;
-            T_ik0 = Math.max(T_ik0, T_ik1 + price - fee);
-            T_ik1 = Math.max(T_ik1, T_ik0_old - price);
+        let mut p0:i64 = 0;
+        let mut p1:i64 = i32::MIN as i64;
+
+        for p in prices {
+            let p0_old = p0;
+            p0 = cmp::max(p0, p1 + (p-fee) as i64);
+            p1 = cmp::max(p1, p0_old - p as i64);
         }
-            
-        return (int)T_ik0;
+
+        p0 as i32
     }
 }
