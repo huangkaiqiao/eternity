@@ -1,8 +1,7 @@
 
 use log::info;
 use std::cmp;
-
-pub struct Solution;
+use crate::Solution;
 
 pub trait CharSequence {
     fn char_at(&self, i:usize) -> char;
@@ -26,10 +25,10 @@ impl Solution {
         sum
     }
 
-    pub fn minimum_delete_sum1(s1: String, s2: String) -> i32 {
+    pub fn _minimum_delete_sum1(s1: String, s2: String) -> i32 {
         info!("s1:{}\ts2:{}", s1, s2);
         let mut sum:i32 = 0;
-        let mut tmp:i32 = 0;
+        let _tmp:i32 = 0;
         if s1.len() == 1 && s2.len() == 1 {
             if s1.char_at(0) == s2.char_at(0) {
                 return 0;

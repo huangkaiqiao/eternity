@@ -18,8 +18,9 @@
  *  Output: false
  *  Explanation: Alice chooses 1, Bob chooses 1, and Alice has no more moves.
  */
+use crate::Solution;
 
-pub struct Solution;
+// pub struct Solution;
 
 impl Solution {
     pub fn divisor_game(n: i32) -> bool {
@@ -38,7 +39,7 @@ impl Solution {
         let mut lose = vec![false; (n+1) as usize];
         win[2] = true;
         for i in 2..(n+1) {
-            for (pos, e) in v.iter().enumerate() {
+            for (_pos, e) in v.iter().enumerate() {
                 // let j: i32 =  as i32;
                 let target = (i+e) as usize;
                 if i+e <= n {

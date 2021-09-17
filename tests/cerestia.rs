@@ -1,0 +1,15 @@
+// use crate::cerestia;
+use eternity::{Solution, setup_logger};
+
+#[test]
+fn test_count_bits() {
+    setup_logger().unwrap();
+    // let sol = Solution{};
+    assert_eq!(vec![0,1,1], Solution::count_bits(2));
+    assert_eq!(vec![0,1,1,2,1,2], Solution::count_bits(5));
+    assert_eq!(vec![0,1,1,2,1,2,2,3,1,2,2], Solution::count_bits(10));
+    assert_eq!(
+        vec![0,1,1,2,1,2,2,3,1,2,2,3,2,3,3,4,1,2,2,3,2,3,3,4,2,3,3,4,3,4,4,5,1,2,2,3,2,3,3,4,2,3,3,4,3,4,4,5,2,3,3,4,3,4,4,5,3,4,4,5,4,5,5,6,1,2,2,3,2,3,3,4,2,3,3,4,3,4,4,5,2,3,3,4,3,4,4,5,3,4,4,5,4,5,5,6,2,3,3,4,3],
+        Solution::count_bits(100)
+    );
+}
