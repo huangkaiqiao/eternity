@@ -13,3 +13,13 @@ fn test_count_bits() {
         Solution::count_bits(100)
     );
 }
+
+#[test]
+fn test_fib() {
+    assert_eq!(0, Solution::fib(0));
+    assert_eq!(1, Solution::fib(2));
+    assert_eq!(2, Solution::fib(3));
+    assert_eq!(3, Solution::fib(4));
+    assert_eq!(13, Solution::fib(7));
+    assert_eq!(6765, Solution::fib(20));
+}
