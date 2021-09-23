@@ -23,3 +23,15 @@ fn test_fib() {
     assert_eq!(13, Solution::fib(7));
     assert_eq!(6765, Solution::fib(20));
 }
+
+#[test]
+fn test_divisor_game() {
+    assert_eq!(false, Solution::divisor_game(1));
+    assert_eq!(true, Solution::divisor_game(2));
+    assert_eq!(false, Solution::divisor_game(3));
+    assert_eq!(true, Solution::divisor_game(10));
+    assert_eq!(true, Solution::divisor_game(50));
+    assert_eq!(true, Solution::divisor_game(100));
+    assert_eq!(true, Solution::divisor_game(500));
+    assert_eq!(true, Solution::divisor_game(1000));
+}
