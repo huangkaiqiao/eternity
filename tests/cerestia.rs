@@ -75,5 +75,8 @@ fn test_is_match() {
     assert_eq!(true, Solution::is_match("aa".to_owned(), "a*".to_owned()));
     assert_eq!(false, Solution::is_match("ab".to_owned(), "a".to_owned()));
     assert_eq!(false, Solution::is_match("aab".to_owned(), "a".to_owned()));
-    assert_eq!(true, Solution::is_match("c.a*ab*".to_owned(), "cabbbb".to_owned()));
+    assert_eq!(false, Solution::is_match("cabbbb".to_owned(), "c.a*ab*".to_owned()));
+    assert_eq!(true, Solution::is_match("caabbbb".to_owned(), "c.a*ab*".to_owned()));
+    assert_eq!(true, Solution::is_match("aab".to_owned(), "c*a*b".to_owned()));
+    assert_eq!(false, Solution::is_match("a".to_owned(), "ab*a".to_owned()));
 }
