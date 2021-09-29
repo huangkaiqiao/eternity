@@ -1,5 +1,6 @@
 // pub struct Solution;
 mod problem5;
+mod problem10;
 mod problem118;
 mod problem338;
 mod problem509;

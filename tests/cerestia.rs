@@ -54,6 +54,7 @@ fn test_pascal_triangle() {
 }
 
 #[test]
+#[ignore]
 fn test_longest_palindrome() {
     initialize();
     info!("test_longest_palindrome");
@@ -65,4 +66,14 @@ fn test_longest_palindrome() {
     assert_eq!("aaaaa", Solution::longest_palindrome("aaaaa".to_owned()));
     assert_eq!("a", Solution::longest_palindrome("ac".to_owned()));
     assert_eq!("redivider", Solution::longest_palindrome("sqqrdnntqmqyacredividerlkyy".to_owned()));
+}
+
+#[test]
+fn test_is_match() {
+    initialize();
+    assert_eq!(false, Solution::is_match("aa".to_owned(), "a".to_owned()));
+    assert_eq!(true, Solution::is_match("aa".to_owned(), "a*".to_owned()));
+    assert_eq!(false, Solution::is_match("ab".to_owned(), "a".to_owned()));
+    assert_eq!(false, Solution::is_match("aab".to_owned(), "a".to_owned()));
+    assert_eq!(true, Solution::is_match("c.a*ab*".to_owned(), "cabbbb".to_owned()));
 }
