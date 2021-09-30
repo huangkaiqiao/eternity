@@ -69,6 +69,7 @@ fn test_longest_palindrome() {
 }
 
 #[test]
+#[ignore]
 fn test_is_match() {
     initialize();
     assert_eq!(false, Solution::is_match("aa".to_owned(), "a".to_owned()));
@@ -80,3 +81,15 @@ fn test_is_match() {
     assert_eq!(true, Solution::is_match("aab".to_owned(), "c*a*b".to_owned()));
     assert_eq!(false, Solution::is_match("a".to_owned(), "ab*a".to_owned()));
 }
+
+#[test]
+fn test_generate_parenthesis() {
+    initialize();
+    let mut gp3 = Solution::generate_parenthesis(3);
+    gp3.sort();
+    assert_eq!(vec!["((()))", "(()())", "(())()", "()(())", "()()()"], gp3);
+    let mut gp4 = Solution::generate_parenthesis(4);
+    gp4.sort();
+    assert_eq!(vec!["(((())))","((()()))","((())())","((()))()","(()(()))","(()()())","(()())()","(())(())","(())()()","()((()))","()(()())","()(())()","()()(())","()()()()"], gp4);
+    assert_eq!(vec!["()"], Solution::generate_parenthesis(1));
+} 
