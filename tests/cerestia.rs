@@ -11,6 +11,7 @@ pub fn initialize() {
 }
 
 #[test]
+#[ignore]
 fn test_count_bits() {
     // setup_logger().unwrap();
     // let sol = Solution{};
@@ -24,6 +25,7 @@ fn test_count_bits() {
 }
 
 #[test]
+#[ignore]
 fn test_fib() {
     assert_eq!(0, Solution::fib(0));
     assert_eq!(1, Solution::fib(2));
@@ -34,6 +36,7 @@ fn test_fib() {
 }
 
 #[test]
+#[ignore]
 fn test_divisor_game() {
     assert_eq!(false, Solution::divisor_game(1));
     assert_eq!(true, Solution::divisor_game(2));
@@ -46,6 +49,7 @@ fn test_divisor_game() {
 }
 
 #[test]
+#[ignore]
 fn test_pascal_triangle() {
     assert_eq!(vec![vec![1],vec![1,1],vec![1,2,1],vec![1,3,3,1],vec![1,4,6,4,1]], Solution::generate(5));
     assert_eq!(vec![vec![1]], Solution::generate(1));
@@ -83,6 +87,7 @@ fn test_is_match() {
 }
 
 #[test]
+#[ignore]
 fn test_generate_parenthesis() {
     initialize();
     let mut gp3 = Solution::generate_parenthesis(3);
@@ -93,3 +98,14 @@ fn test_generate_parenthesis() {
     assert_eq!(vec!["(((())))","((()()))","((())())","((()))()","(()(()))","(()()())","(()())()","(())(())","(())()()","()((()))","()(()())","()(())()","()()(())","()()()()"], gp4);
     assert_eq!(vec!["()"], Solution::generate_parenthesis(1));
 } 
+
+#[test]
+fn test_longest_valid_parenttheses() {
+    initialize();
+    assert_eq!(2, Solution::longest_valid_parentheses("(()".to_owned()));
+    assert_eq!(4, Solution::longest_valid_parentheses(")()())".to_owned()));
+    assert_eq!(0, Solution::longest_valid_parentheses("".to_owned()));
+    assert_eq!(8, Solution::longest_valid_parentheses("()()()()".to_owned()));
+    assert_eq!(8, Solution::longest_valid_parentheses("()(())()".to_owned()));
+    assert_eq!(62, Solution::longest_valid_parentheses("((((())())()))(()((()()(())())((((((()(())(())((())(((((())))())))(((())())(())))))()(()())())((()((".to_owned()));
+}
