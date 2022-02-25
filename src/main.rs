@@ -1,14 +1,14 @@
 // use log::{debug, error, info, trace, warn};
 use log::info;
 
-use eternity::Solution;
+use eternity::{Solution, setup_logger};
 
 fn main() {
     // println!("Hello, world!");
     // let s = Solution{};
     // let result = setup_logger();
     // info!("{:?}", result.unwrap());
-    // setup_logger();
+    setup_logger();
 
     // println!("{}", );
     // let r = Solution::minimum_delete_sum(String::from("sea"), String::from("eat"));
@@ -29,9 +29,15 @@ fn main() {
     // let r = Solution::max_profit(prices, fee);
     // info!("{}", r);
 
-    let arr = [2, 3, 7, 8, 9, 10, 100, 1000];
-    for n in arr.iter() {
-        let r = Solution::divisor_game(*n);
-        info!("{}, {}", n, r);
-    }
+    // let arr = [2, 3, 7, 8, 9, 10, 100, 1000];
+    // for n in arr.iter() {
+    //     let r = Solution::divisor_game(*n);
+    //     info!("{}, {}", n, r);
+    // }
+
+    let version_numbers = [["1.01", "1.001"], ["1.0", "1.0.0"], ["0.1", "1.1"], ["2.5.33", "2.5"]];
+    for pair in version_numbers.iter() {
+        let r = Solution::compare_version(pair[0].to_owned(), pair[1].to_owned());
+        info!("version1={}, version2={}, output={}", pair[0].to_owned(), pair[1].to_owned(), r);
+    } 
 }

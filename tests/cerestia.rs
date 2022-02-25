@@ -100,6 +100,7 @@ fn test_generate_parenthesis() {
 } 
 
 #[test]
+#[ignore]
 fn test_longest_valid_parenttheses() {
     initialize();
     assert_eq!(2, Solution::longest_valid_parentheses("(()".to_owned()));
@@ -108,4 +109,12 @@ fn test_longest_valid_parenttheses() {
     assert_eq!(8, Solution::longest_valid_parentheses("()()()()".to_owned()));
     assert_eq!(8, Solution::longest_valid_parentheses("()(())()".to_owned()));
     assert_eq!(62, Solution::longest_valid_parentheses("((((())())()))(()((()()(())())((((((()(())(())((())(((((())))())))(((())())(())))))()(()())())((()((".to_owned()));
+}
+
+#[test]
+#[ignore]
+fn test_trap() {
+    initialize();
+    assert_eq!(6, Solution::trap(vec![0,1,0,2,1,0,1,3,2,1,2,1]));
+    assert_eq!(9, Solution::trap(vec![4,2,0,3,2,5]));
 }
