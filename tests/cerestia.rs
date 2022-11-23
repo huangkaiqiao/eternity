@@ -112,6 +112,7 @@ fn test_longest_valid_parenttheses() {
 }
 
 #[test]
+#[ignore]
 // #[ignore]
 fn test_trap() {
     initialize();
