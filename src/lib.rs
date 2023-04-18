@@ -5,6 +5,7 @@ mod problem22;
 mod problem32;
 mod problem42;
 mod problem44;
+mod problem45;
 mod problem118;
 mod problem165;
 mod problem338;

@@ -35,9 +35,24 @@ fn main() {
     //     info!("{}, {}", n, r);
     // }
 
-    let version_numbers = [["1.01", "1.001"], ["1.0", "1.0.0"], ["0.1", "1.1"], ["2.5.33", "2.5"]];
-    for pair in version_numbers.iter() {
-        let r = Solution::compare_version(pair[0].to_owned(), pair[1].to_owned());
-        info!("version1={}, version2={}, output={}", pair[0].to_owned(), pair[1].to_owned(), r);
-    } 
+    // let version_numbers = [["1.01", "1.001"], ["1.0", "1.0.0"], ["0.1", "1.1"], ["2.5.33", "2.5"]];
+    // for pair in version_numbers.iter() {
+    //     let r = Solution::compare_version(pair[0].to_owned(), pair[1].to_owned());
+    //     info!("version1={}, version2={}, output={}", pair[0].to_owned(), pair[1].to_owned(), r);
+    // } 
+
+    let nums_arr = vec![
+        vec![2,3,1,1,4], 
+        vec![2,3,0,1,4], 
+        vec![6,7,1,1,1,1,1,1],
+        vec![8,1,1,1,1,1,1,1,1],
+        vec![9,3,4,9,4,7,10,1,4,7,4,1,1,6,9,10,6,4,4,9,7,5,2,6,2,2,7,9,4,4,1,6,1,7,3,3,3,8,9,2,9,7,5,2,9,8,3,7,2,5,4,10,1,5,7,9,2,9,3,4,4,5,5,2,6,6,8,4,10,6,7,5,5,8,5,9,6,6,9,10,7,5,10,10,1,2,9,10,5,2,2,5,9,5,10,6,3,2,7,1],
+        vec![1,1,1,1,1,7],
+        vec![1,1,1,2,0,1],
+        vec![0],
+    ];
+    for nums in nums_arr.iter() {
+        let r = Solution::jump(nums.to_vec());
+        info!("output={}", r);
+    }
 }
