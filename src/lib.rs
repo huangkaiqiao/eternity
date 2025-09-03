@@ -1,4 +1,5 @@
 // pub struct Solution;
+mod problem1;
 mod problem5;
 // mod problem10;
 mod problem22;
@@ -13,6 +14,9 @@ mod problem509;
 mod problem713;
 mod problem714;
 mod problem1025;
+mod problem2561;
+mod problem2683;
+mod problem3025;
 
 // pub use problem713::Solution as Solution;
 // pub use problem714::Solution as Solution;

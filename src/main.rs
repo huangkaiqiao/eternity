@@ -1,14 +1,13 @@
 // use log::{debug, error, info, trace, warn};
-use log::info;
 
-use eternity::{Solution, setup_logger};
+use eternity::setup_logger;
 
 fn main() {
     // println!("Hello, world!");
     // let s = Solution{};
     // let result = setup_logger();
     // info!("{:?}", result.unwrap());
-    setup_logger();
+    let _ = setup_logger();
 
     // println!("{}", );
     // let r = Solution::minimum_delete_sum(String::from("sea"), String::from("eat"));
@@ -41,18 +40,39 @@ fn main() {
     //     info!("version1={}, version2={}, output={}", pair[0].to_owned(), pair[1].to_owned(), r);
     // } 
 
-    let nums_arr = vec![
-        vec![2,3,1,1,4], 
-        vec![2,3,0,1,4], 
-        vec![6,7,1,1,1,1,1,1],
-        vec![8,1,1,1,1,1,1,1,1],
-        vec![9,3,4,9,4,7,10,1,4,7,4,1,1,6,9,10,6,4,4,9,7,5,2,6,2,2,7,9,4,4,1,6,1,7,3,3,3,8,9,2,9,7,5,2,9,8,3,7,2,5,4,10,1,5,7,9,2,9,3,4,4,5,5,2,6,6,8,4,10,6,7,5,5,8,5,9,6,6,9,10,7,5,10,10,1,2,9,10,5,2,2,5,9,5,10,6,3,2,7,1],
-        vec![1,1,1,1,1,7],
-        vec![1,1,1,2,0,1],
-        vec![0],
-    ];
-    for nums in nums_arr.iter() {
-        let r = Solution::jump(nums.to_vec());
-        info!("output={}", r);
-    }
+    // let nums_arr = vec![
+    //     vec![2,3,1,1,4], 
+    //     vec![2,3,0,1,4], 
+    //     vec![6,7,1,1,1,1,1,1],
+    //     vec![8,1,1,1,1,1,1,1,1],
+    //     vec![9,3,4,9,4,7,10,1,4,7,4,1,1,6,9,10,6,4,4,9,7,5,2,6,2,2,7,9,4,4,1,6,1,7,3,3,3,8,9,2,9,7,5,2,9,8,3,7,2,5,4,10,1,5,7,9,2,9,3,4,4,5,5,2,6,6,8,4,10,6,7,5,5,8,5,9,6,6,9,10,7,5,10,10,1,2,9,10,5,2,2,5,9,5,10,6,3,2,7,1],
+    //     vec![1,1,1,1,1,7],
+    //     vec![1,1,1,2,0,1],
+    //     vec![0],
+    // ];
+    // for nums in nums_arr.iter() {
+    //     let r = Solution::jump(nums.to_vec());
+    //     info!("output={}", r);
+    // }
+
+    // let derived_arr = vec![
+    //     vec![1, 1, 0],
+    //     vec![1, 1],
+    //     vec![1, 0]
+    // ];
+    // for derived in derived_arr.iter() {
+    //     let r = Solution::does_valid_array_exist(derived.to_vec());
+    //     info!("output={}", r);
+    // }
+
+    // let cases = vec![
+    //     (vec![4, 2, 2, 2], vec![1, 4, 1, 2]),
+    //     (vec![2, 3, 4, 1], vec![3, 2, 5, 1])
+    // ];
+    // for baskets in cases {
+    //     let baskets1 = baskets.0;
+    //     let baskets2 = baskets.1;
+    //     let c = Solution::min_cost(baskets1, baskets2);
+    //     info!("output={}", c);
+    // }
 }

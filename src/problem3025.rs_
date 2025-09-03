@@ -1,0 +1,75 @@
+use log::info;
+
+use crate::Solution;
+
+impl Solution {
+    /*pub fn number_of_pairs(points: Vec<Vec<i32>>) -> i32 {
+        let mut rectangles:Vec<(Vec<i32>, Vec<i32>)> = Vec::new();
+        for i in 0..points.len() {
+            for j in 0..points.len() {
+                if i != j {
+                    if points[i][0] >= points[j][0] && points[i][1] <= points[j][1] {
+                        rectangles.push((points[i].clone(), points[j].clone()))
+                    }
+                }
+            }
+        }
+        rectangles.retain(|rect| Self::check(rect.clone(), points.clone()));
+        return rectangles.len() as i32;
+    }*/
+
+    pub fn check(rect: (Vec<i32>, Vec<i32>), points: Vec<Vec<i32>>) -> bool {
+        for point in &points {
+            if point == &rect.0 || point == &rect.1 {
+                continue;
+            }
+            if rect.1[0] <= point[0] && point[0] <= rect.0[0]  &&
+                rect.0[1] <= point[1] && point[1] <= rect.1[1]  {
+                return false;
+            }
+            // if rect.0[0] <= point[0] && point[0] <= rect.1[0] &&
+            //     rect.0[1] >= point[1] && point[1] >= rect.1[1] {
+            //     return false;
+            // }
+        }
+        true
+    }
+
+    pub fn number_of_pairs(mut points: Vec<Vec<i32>>) -> i32 {
+        let mut cnt = 0;
+        let len = points.len();
+        // for i in 0..len {
+        //     for j in (i+1)..len {
+        //         if points[i][0] > points[j][0] || (points[i][0] == points[j][0] && points[i][1] < points[j][1]) {
+        //             let tmp = [points[i][0], points[i][1]];
+        //             points[i][0] = points[j][0];
+        //             points[i][1] = points[j][1];
+        //             points[j][0] = tmp[0];
+        //             points[j][1] = tmp[1];
+        //         }
+        //     }
+        // }
+        points.sort_by(|a, b| {
+            if a[0] == b[0] {
+                b[1].cmp(&a[1])
+            } else {
+                a[0].cmp(&b[0])
+            }
+        });
+        // info!("sorted points: {:?}", points);
+        for i in 1..len {
+            let mut min = std::i32::MAX;
+            for j in (0..i).rev() {
+                // info!(" point: {:?}, min: {}", points[j], min);
+                if points[j][1] < points[i][1] {
+                    continue;
+                }
+                if points[j][1] < min {
+                    min = points[j][1];
+                    cnt += 1;
+                }
+            }
+        }
+        return cnt;
+    }
+}
